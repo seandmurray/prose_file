@@ -1,0 +1,33 @@
+{
+ "name": "prose_file",
+  "version": "1.0.3",
+ "description": "A file Utiliy. Make writing node easier, prettier and less error prone. Writes and reads more like prose",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "file",
+    "core",
+    "easy",
+    "lodash",
+    "pretty",
+    "prose",
+    "short",
+    "simple",
+    "style"
+  ],
+  "authors": [
+    "Sean D. Murray"
+  ],
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seandmurray/prose_file"
+  },
+  "dependencies": {
+    "prose_os": "*",
+    "prose_string": "*"
+  },
+  "devDependencies": {}
+}
