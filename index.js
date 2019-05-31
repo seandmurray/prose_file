@@ -32,6 +32,14 @@ const exitHandler = () => {
 // Set above handler to run when program terminates.
 os_util.exitHandlers(exitHandler);
 
+exports.exists(filePath) {
+	return fs.existsSync(filePath);
+}
+
+exports.notExists(filePath) {
+	return exports.exists(filePath) ? false : true;
+}
+
 // Get a temp file, write an empty string to it to make sure writes work.
 exports.temp = (postfix = exports.EXT_TMP, prefix = string_util.BLANK_STRING) => {
 	const result = path.join(os.tmpdir(), prefix + uuid() + postfix);

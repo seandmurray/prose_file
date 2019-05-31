@@ -7,6 +7,8 @@ A file Utiliy. Make writing node easier, prettier and less error prone. Writes a
 
 ## Synopsis
 
+exists(filePath): true if a file exists
+notExists(filePath): false if a file exists
 StreamReadLines: Stream a file, line by line.
 temp: Create a temp file that cleans itself up.
 
