@@ -32,11 +32,11 @@ const exitHandler = () => {
 // Set above handler to run when program terminates.
 os_util.exitHandlers(exitHandler);
 
-exports.exists(filePath) {
+exports.exists = (filePath) => {
 	return fs.existsSync(filePath);
 }
 
-exports.notExists(filePath) {
+exports.notExists = (filePath) => {
 	return exports.exists(filePath) ? false : true;
 }
 

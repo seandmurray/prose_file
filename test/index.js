@@ -16,6 +16,12 @@ const pathPrefix = path.join(os.tmpdir(), aPrefix);
 const tmpTxtFile = file_util.temp('.hTml');
 
 // content_type.fromData
+assert.equal(file_util.exists('/tmp/nosuch'), false, 'File does not exist');
+const existsFile = file_util.temp();
+assert.equal(file_util.exists(existsFile), true, 'File does exist');
+console.log('File exist testing success');
+
+// content_type.fromData
 assert.equal(file_util.content_type.fromData(), undefined, 'Undefined gets undefined');
 assert.equal(file_util.content_type.fromData(undefined), undefined, 'Undefined gets undefined');
 assert.equal(file_util.content_type.fromData(null), undefined, 'Null gets null');
