@@ -52,7 +52,7 @@ console.log('contentType fromFilePath testing success');
 assert.equal(string_util.notBlank(file_util.temp()), true, 'Not a blank filename');
 assert.equal(file_util.temp(aPostfix, aPrefix).startsWith(pathPrefix), true, 'Has a prefix!');
 assert.equal(file_util.temp(aPostfix).endsWith(aPostfix), true, 'Has a postfix!');
-os_util.systemSync('node ./test/TempFileCleanup.js');
+
 fs.readdir(os.tmpdir(), (err, files) => {
 		if (err) {
 				console.log(err.stack);
