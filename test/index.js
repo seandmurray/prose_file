@@ -5,7 +5,6 @@ const path = require('path');
 const stream = require("stream");
 
 const object_util = require('prose_object');
-const os_util = require('prose_os');
 const string_util = require('prose_string');
 
 const file_util = require('../index');
@@ -54,13 +53,13 @@ assert.equal(file_util.temp(aPostfix, aPrefix).startsWith(pathPrefix), true, 'Ha
 assert.equal(file_util.temp(aPostfix).endsWith(aPostfix), true, 'Has a postfix!');
 
 fs.readdir(os.tmpdir(), (err, files) => {
-		if (err) {
-				console.log(err.stack);
-				return;
-		}
-		files.forEach((file) => {
-				if (file.endsWith('.file_util_test')) assert.fail('Should not find any files like this?');
-		});
+	if (err) {
+		console.log(err.stack);
+		return;
+	}
+	files.forEach((file) => {
+		if (file.endsWith('.file_util_test')) assert.fail('Should not find any files like this?');
+	});
 });
 console.log('temp testing success');
 
@@ -69,11 +68,11 @@ const streamReadLines = new file_util.StreamReadLines();
 const testData = ['one', 'two', 'three'];
 const result = [];
 class TestWritable extends stream.Writable {
-	constructor(options){
-		super(options)
+	constructor(options) {
+		super(options);
 	}
-	
-	_write(chunk, encoding, callback){
+
+	_write(chunk, encoding, callback) {
 		result.push(chunk.toString());
 		callback();
 	}
@@ -82,16 +81,16 @@ class TestWritable extends stream.Writable {
 const testWritable = new TestWritable();
 const tmpFile = file_util.temp();
 fs.writeFileSync(tmpFile, testData.join("\n"));
-const fileStream =  fs.createReadStream(tmpFile);
+const fileStream = fs.createReadStream(tmpFile);
 fileStream
 	.pipe(streamReadLines)
 	.pipe(testWritable);
 
-streamReadLines.on("error",(err)=>{
-  assert.fail(err);
+streamReadLines.on("error", (err) => {
+	assert.fail(err);
 });
 
-testWritable.on("finish",()=>{
+testWritable.on("finish", () => {
 	assert.equal(object_util.equal(result, testData), true, 'Check if test data matches in content and order');
 	console.log('StreamReadLines testing success');
 	console.log('prose_file done');
