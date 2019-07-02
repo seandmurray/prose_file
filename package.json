@@ -1,6 +1,6 @@
 {
   "name": "prose_file",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A file Utiliy. Make writing node easier, prettier and less error prone. Writes and reads more like prose",
   "license": "MIT",
   "main": "index.js",
