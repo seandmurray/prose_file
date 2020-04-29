@@ -1,6 +1,6 @@
 {
   "name": "prose_file",
-  "version": "1.0.12",
+  "version": "2.0.4",
   "description": "A file Utiliy. Make writing node easier, prettier and less error prone. Writes and reads more like prose",
   "license": "MIT",
   "main": "index.js",
@@ -26,7 +26,7 @@
     "url": "https://github.com/seandmurray/prose_file"
   },
   "dependencies": {
-    "uuid": "*",
+    "uuidv4": "*",
     "prose_os": "*",
     "prose_string": "*"
   },

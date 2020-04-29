@@ -4,7 +4,7 @@
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const uuid = require('uuid');
+const { uuid } = require('uuidv4');
 
 const os_util = require('prose_os');
 const string_util = require('prose_string');

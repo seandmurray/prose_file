@@ -1,4 +1,4 @@
-# Prose/File
+# prose_file
 
 Copyright (c) 2019 Seán D. Murray
 SEE MIT LICENSE FILE
